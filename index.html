@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cash App Clone</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- LOGIN SCREEN -->
+<div id="loginScreen" class="screen">
+  <div class="login-card">
+    <h1>Cash App</h1>
+    <input type="text" id="loginUsername" placeholder="Username">
+    <input type="password" id="loginPin" placeholder="PIN">
+    <button onclick="login()">Log In</button>
+    <p id="loginMsg" class="msg"></p>
+    <p class="switch">New here? <a href="#" onclick="showRegister()">Register</a></p>
+  </div>
+</div>
+
+<!-- REGISTER SCREEN -->
+<div id="registerScreen" class="screen hidden">
+  <div class="login-card">
+    <h1>Create Account</h1>
+    <input type="text" id="regUsername" placeholder="Username">
+    <input type="password" id="regPin" placeholder="PIN">
+    <button onclick="register()">Register</button>
+    <p id="regMsg" class="msg"></p>
+    <p class="switch"><a href="#" onclick="showLogin()">Back to Login</a></p>
+  </div>
+</div>
+
+<!-- DASHBOARD SCREEN -->
+<div id="dashboardScreen" class="screen hidden">
+  <div class="card balance-card">
+    <h2 id="welcome">Welcome</h2>
+    <p>💵 Balance: $<span id="balance">0</span></p>
+    <p>💰 Crypto: <span id="cryptoBalance">0</span></p>
+  </div>
+
+  <div class="card actions-card">
+    <button onclick="addMoneyPrompt()">Add Money</button>
+    <button onclick="sendMoneyPrompt()">Send Money</button>
+    <button onclick="generateTRC20Wallet()">Generate Wallet</button>
+    <button onclick="sendTRC20Prompt()">Send TRC20</button>
+  </div>
+
+  <div class="card wallets-card">
+    <h3>Wallets</h3>
+    <p>TRC20: <span id="trcBalance">-</span></p>
+    <p>ETH: <span id="ethWallet">-</span></p>
+    <p>BTC: <span id="btcWallet">-</span></p>
+  </div>
+
+  <div class="card history-card">
+    <h3>Transaction History</h3>
+    <ul id="history"></ul>
+  </div>
+
+  <button class="logout-btn" onclick="logout()">Logout</button>
+</div>
+
+<script type="module" src="index.mjs"></script>
+</body>
+</html>
